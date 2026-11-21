@@ -1,0 +1,12 @@
+{
+  "name": "kleiderspende-portal",
+  "version": "1.0.0",
+  "description": "Fallstudie IPWA01-01: Portal zur Registrierung von Kleiderspenden",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "license": "MIT"
+}

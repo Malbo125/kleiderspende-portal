@@ -1,0 +1,78 @@
+/* Eigene Anpassungen auf Basis von Bootstrap 5.3 */
+:root {
+  --kn-gruen: #0f6e64;
+  --kn-gruen-dunkel: #0a4f48;
+  --kn-gelb: #f4b740;
+  --bs-primary: #0f6e64;
+  --bs-primary-rgb: 15, 110, 100;
+  --bs-link-color: #0f6e64;
+  --bs-link-color-rgb: 15, 110, 100;
+  --bs-link-hover-color: #0a4f48;
+  --bs-link-hover-color-rgb: 10, 79, 72;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--kn-gruen);
+  --bs-btn-border-color: var(--kn-gruen);
+  --bs-btn-hover-bg: var(--kn-gruen-dunkel);
+  --bs-btn-hover-border-color: var(--kn-gruen-dunkel);
+  --bs-btn-active-bg: var(--kn-gruen-dunkel);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--kn-gruen);
+  --bs-btn-border-color: var(--kn-gruen);
+  --bs-btn-hover-bg: var(--kn-gruen);
+  --bs-btn-hover-border-color: var(--kn-gruen);
+  --bs-btn-active-bg: var(--kn-gruen);
+  --bs-btn-active-border-color: var(--kn-gruen);
+}
+.btn-warning { --bs-btn-bg: var(--kn-gelb); --bs-btn-border-color: var(--kn-gelb); }
+
+.skip-link { position: absolute; top: .5rem; left: .5rem; z-index: 1000; background: #fff; padding: .5rem 1rem; }
+
+.site-header { background: var(--kn-gruen); }
+.brand-name { font-weight: 700; display: block; line-height: 1.1; }
+.brand-claim { font-size: .8rem; opacity: .85; line-height: 1.1; }
+
+.hero { background: linear-gradient(135deg, var(--kn-gruen) 0%, var(--kn-gruen-dunkel) 100%); color: #fff; }
+.hero-logo { max-width: 220px; }
+
+.step-number {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%;
+  background: var(--kn-gelb); color: #222; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.region { background: #fff; border-left: 4px solid var(--kn-gelb); font-weight: 600; }
+
+.choice { padding: 1rem; text-align: left; }
+.choice .small { opacity: .85; }
+
+/* Kachel-Checkboxen für die Kleidungsart: große Klickflächen fürs Tablet */
+.kleidung-option .form-check-label { display: block; width: 100%; cursor: pointer; }
+.kleidung-option { border: 1px solid var(--bs-border-color); border-radius: .5rem; padding: .75rem 1rem .75rem 2.5rem; }
+.kleidung-option:has(input:checked) { border-color: var(--kn-gruen); background: rgba(15, 110, 100, .06); }
+
+.check-icon {
+  width: 4rem; height: 4rem; border-radius: 50%;
+  background: var(--kn-gruen); color: #fff; font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.site-footer { background: #1f2d2b; color: #d9e4e2; }
+.site-footer a { color: #fff; }
+
+.legal h2 { margin-top: 1.5rem; }
+
+/* Tablet: etwas größere Bedienelemente (Touch-Bedienung in der Geschäftsstelle) */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .form-control, .form-select { padding: .75rem 1rem; font-size: 1.1rem; }
+}
+
+@media print {
+  .site-header, .site-footer, #drucken, #neue-spende { display: none !important; }
+}
+
+/* Bessere Lesbarkeit der Navigation auf grünem Grund (Kontrast) */
+.site-header .navbar { --bs-navbar-color: rgba(255, 255, 255, .9); --bs-navbar-hover-color: #fff; --bs-navbar-active-color: #fff; }
+.site-header .nav-link.active { text-decoration: underline; text-underline-offset: .35rem; }

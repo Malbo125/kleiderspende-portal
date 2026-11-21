@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="description" content="Registrieren Sie Ihre Kleiderspende und entscheiden Sie selbst, in welches Krisengebiet sie geht.">
+  <title>Start | Kleidernetz e. V.</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Hauptnavigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="img/logo.svg" alt="" width="44" height="44">
+          <span><span class="brand-name">Kleidernetz e. V.</span><span class="brand-claim d-none d-sm-block">Kleiderspenden, die ankommen</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hauptmenue" aria-controls="hauptmenue" aria-expanded="false" aria-label="Menü öffnen">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="hauptmenue">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Start</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#ablauf">So funktioniert's</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#krisengebiete">Krisengebiete</a></li>
+            <li class="nav-item"><a class="btn btn-warning ms-md-2 mt-2 mt-md-0" href="registrierung.html">Spende registrieren</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="inhalt" class="flex-grow-1">
+    <section class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <h1 class="display-5 fw-bold">Ihre Kleiderspende. Ihre Entscheidung.</h1>
+            <p class="lead">Bei uns bestimmen Sie selbst, in welche Krisenregion Ihre Kleidung geht. Registrieren Sie Ihre Spende in wenigen Schritten, ob Sie sie persönlich vorbeibringen oder abholen lassen.</p>
+            <div class="d-grid d-sm-flex gap-3">
+              <a class="btn btn-warning btn-lg" href="registrierung.html?uebergabe=geschaeftsstelle">Ich bin in der Geschäftsstelle</a>
+              <a class="btn btn-outline-light btn-lg" href="registrierung.html?uebergabe=abholung">Abholung anfordern</a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img class="hero-logo img-fluid" src="img/logo.svg" alt="" width="220" height="220">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf" class="container py-5">
+      <h2 class="mb-4">So funktioniert's</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm"><div class="card-body">
+            <p class="step-number" aria-hidden="true">1</p>
+            <h3 class="h5">Übergabe wählen</h3>
+            <p class="card-text">Bringen Sie Ihre Spende in die Geschäftsstelle oder lassen Sie sie von unserem Sammelfahrzeug abholen. Abholungen sind im Umkreis der Geschäftsstelle möglich (Postleitzahlen 34xxx).</p>
+          </div></div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm"><div class="card-body">
+            <p class="step-number" aria-hidden="true">2</p>
+            <h3 class="h5">Kleidung und Ziel angeben</h3>
+            <p class="card-text">Wählen Sie die Art der Kleidung und das Krisengebiet, in das Ihre Spende gehen soll.</p>
+          </div></div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm"><div class="card-body">
+            <p class="step-number" aria-hidden="true">3</p>
+            <h3 class="h5">Bestätigung erhalten</h3>
+            <p class="card-text">Sie erhalten sofort eine Bestätigung mit allen Angaben, Datum, Uhrzeit und Ort der Übergabe.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="krisengebiete" class="bg-light py-5">
+      <div class="container">
+        <h2>Aktuelle Krisengebiete</h2>
+        <p>Diese Regionen unterstützen wir derzeit mit Kleiderspenden. Die Liste wird vom Verein laufend aktualisiert.</p>
+        <ul class="row list-unstyled g-3" id="krisengebiet-liste">
+          <li class="col-sm-6 col-lg-4"><div class="region p-3 rounded">Ukraine</div></li>
+          <li class="col-sm-6 col-lg-4"><div class="region p-3 rounded">Sudan</div></li>
+          <li class="col-sm-6 col-lg-4"><div class="region p-3 rounded">Syrien</div></li>
+          <li class="col-sm-6 col-lg-4"><div class="region p-3 rounded">Afghanistan</div></li>
+          <li class="col-sm-6 col-lg-4"><div class="region p-3 rounded">Haiti</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="geschaeftsstelle" class="container py-5">
+      <h2>Unsere Geschäftsstelle</h2>
+      <p class="mb-1">Kleidernetz e. V., Lindenallee 12, 34117 Kassel</p>
+      <p>Annahme von Spenden: Montag bis Freitag, 9 bis 17 Uhr. Vor Ort steht ein Tablet für die Registrierung bereit.</p>
+    </section>
+  </main>
+  <footer class="site-footer mt-5">
+    <div class="container py-4">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold">Kleidernetz e. V.</p>
+          <p class="mb-0 small">Lindenallee 12, 34117 Kassel</p>
+          <p class="mb-0 small">Fiktiver Verein, erstellt im Rahmen einer Fallstudie der IU Internationale Hochschule.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <nav aria-label="Rechtliche Hinweise">
+            <ul class="list-inline mb-1">
+              <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
+              <li class="list-inline-item"><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+          </nav>
+          <p class="mb-0 small">&copy; 2026 Kleidernetz e. V.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

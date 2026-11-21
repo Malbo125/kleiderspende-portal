@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="description" content="Formular zur Registrierung einer Kleiderspende.">
+  <title>Spende registrieren | Kleidernetz e. V.</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Hauptnavigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="img/logo.svg" alt="" width="44" height="44">
+          <span><span class="brand-name">Kleidernetz e. V.</span><span class="brand-claim d-none d-sm-block">Kleiderspenden, die ankommen</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hauptmenue" aria-controls="hauptmenue" aria-expanded="false" aria-label="Menü öffnen">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="hauptmenue">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Start</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#ablauf">So funktioniert's</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#krisengebiete">Krisengebiete</a></li>
+            <li class="nav-item"><a class="btn btn-warning ms-md-2 mt-2 mt-md-0 active" aria-current="page" href="registrierung.html">Spende registrieren</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="inhalt" class="flex-grow-1">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="mb-3">Kleiderspende registrieren</h1>
+          <p class="mb-4">Felder mit <span class="text-danger" aria-hidden="true">*</span><span class="visually-hidden">Stern</span> sind Pflichtfelder.</p>
+          <noscript><div class="alert alert-warning">Für die Registrierung wird JavaScript benötigt. Bitte aktivieren Sie JavaScript in Ihrem Browser.</div></noscript>
+
+          <div id="fehler-zusammenfassung" class="alert alert-danger d-none" role="alert" tabindex="-1"></div>
+
+          <form id="spendenformular" novalidate>
+            <fieldset class="mb-4">
+              <legend class="h5">1. Übergabe <span class="text-danger" aria-hidden="true">*</span></legend>
+              <div class="row g-3" id="uebergabe-gruppe">
+                <div class="col-sm-6">
+                  <input class="btn-check" type="radio" name="uebergabe" id="uebergabe-geschaeftsstelle" value="geschaeftsstelle" required>
+                  <label class="btn btn-outline-primary w-100 choice" for="uebergabe-geschaeftsstelle">
+                    <strong>Übergabe an der Geschäftsstelle</strong><br><span class="small">Lindenallee 12, 34117 Kassel</span>
+                  </label>
+                </div>
+                <div class="col-sm-6">
+                  <input class="btn-check" type="radio" name="uebergabe" id="uebergabe-abholung" value="abholung" required>
+                  <label class="btn btn-outline-primary w-100 choice" for="uebergabe-abholung">
+                    <strong>Abholung</strong><br><span class="small">durch unser Sammelfahrzeug (PLZ 34xxx)</span>
+                  </label>
+                </div>
+              </div>
+              <div class="invalid-feedback d-block" id="uebergabe-fehler" aria-live="polite"></div>
+            </fieldset>
+
+            <fieldset class="mb-4 d-none" id="abholadresse" disabled>
+              <legend class="h5">2. Abholadresse <span class="text-danger" aria-hidden="true">*</span></legend>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="name">Vor- und Nachname</label>
+                  <input class="form-control" type="text" id="name" name="name" autocomplete="name" maxlength="80" required aria-describedby="name-fehler">
+                  <div class="invalid-feedback" id="name-fehler"></div>
+                </div>
+                <div class="col-8 col-md-9">
+                  <label class="form-label" for="strasse">Straße</label>
+                  <input class="form-control" type="text" id="strasse" name="strasse" autocomplete="address-line1" maxlength="100" required aria-describedby="strasse-fehler">
+                  <div class="invalid-feedback" id="strasse-fehler"></div>
+                </div>
+                <div class="col-4 col-md-3">
+                  <label class="form-label" for="hausnummer">Hausnr.</label>
+                  <input class="form-control" type="text" id="hausnummer" name="hausnummer" maxlength="6" required aria-describedby="hausnummer-fehler">
+                  <div class="invalid-feedback" id="hausnummer-fehler"></div>
+                </div>
+                <div class="col-5 col-md-3">
+                  <label class="form-label" for="plz">PLZ</label>
+                  <input class="form-control" type="text" id="plz" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="plz-hinweis plz-fehler">
+                  <div class="form-text" id="plz-hinweis">Abholung nur im Gebiet 34xxx</div>
+                  <div class="invalid-feedback" id="plz-fehler"></div>
+                </div>
+                <div class="col-7 col-md-9">
+                  <label class="form-label" for="ort">Ort</label>
+                  <input class="form-control" type="text" id="ort" name="ort" autocomplete="address-level2" maxlength="60" required aria-describedby="ort-fehler">
+                  <div class="invalid-feedback" id="ort-fehler"></div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+              <legend class="h5"><span class="schritt-nr">2</span>. Art der Kleidung <span class="text-danger" aria-hidden="true">*</span></legend>
+              <div class="row row-cols-1 row-cols-sm-2 g-2" id="kleidung-gruppe"></div>
+              <div class="invalid-feedback d-block" id="kleidung-fehler" aria-live="polite"></div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+              <legend class="h5"><span class="schritt-nr">3</span>. Krisengebiet <span class="text-danger" aria-hidden="true">*</span></legend>
+              <label class="form-label" for="krisengebiet">In welches Krisengebiet soll Ihre Spende gehen?</label>
+              <select class="form-select" id="krisengebiet" name="krisengebiet" required aria-describedby="krisengebiet-fehler">
+                <option value="">Bitte wählen …</option>
+              </select>
+              <div class="invalid-feedback" id="krisengebiet-fehler"></div>
+            </fieldset>
+
+            <button class="btn btn-primary btn-lg w-100" type="submit">Spende verbindlich registrieren</button>
+            <p class="small text-muted mt-2">Hinweise zur Verarbeitung Ihrer Angaben finden Sie in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer mt-5">
+    <div class="container py-4">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <p class="mb-1 fw-semibold">Kleidernetz e. V.</p>
+          <p class="mb-0 small">Lindenallee 12, 34117 Kassel</p>
+          <p class="mb-0 small">Fiktiver Verein, erstellt im Rahmen einer Fallstudie der IU Internationale Hochschule.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <nav aria-label="Rechtliche Hinweise">
+            <ul class="list-inline mb-1">
+              <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
+              <li class="list-inline-item"><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+          </nav>
+          <p class="mb-0 small">&copy; 2026 Kleidernetz e. V.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/registrierung.js"></script>
+</body>
+</html>
